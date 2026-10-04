@@ -1,0 +1,734 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf8f3">
+  <meta name="description" content="Bliss Events plans birthdays, weddings, naming ceremonies, proposals, photography and more around Kumta and Honnavar, Karnataka.">
+  <title>Bliss Events | Celebrations, beautifully planned</title>
+
+  <style>
+    :root {
+      --bg: #fbf8f3;
+      --surface: #fff;
+      --ink: #202723;
+      --muted: #65716a;
+      --line: #e7e2d9;
+      --green: #244d3b;
+      --gold: #b77d36;
+      --soft: #eaece5;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: min(1160px, 92%);
+      margin: auto;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 22px 0;
+    }
+
+    .brand {
+      font: bold 25px Georgia, serif;
+    }
+
+    .brand span { color: var(--gold); }
+
+    nav {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    nav a:not(.btn) {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-block;
+      border: 0;
+      border-radius: 4px;
+      padding: 13px 19px;
+      background: var(--green);
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .btn:hover { opacity: .88; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.03fr .97fr;
+      gap: 38px;
+      align-items: center;
+      padding: 54px 0 70px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font: clamp(42px, 6vw, 72px)/1.04 Georgia, serif;
+      letter-spacing: -1.8px;
+      margin: 17px 0;
+    }
+
+    .hero p {
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 520px;
+    }
+
+    .heroimg {
+      min-height: 420px;
+      border-radius: 5px;
+      background:
+        linear-gradient(180deg, transparent, #0005),
+        url("https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=80")
+        center/cover;
+      position: relative;
+    }
+
+    .imgtag {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: white;
+      color: #26362d;
+      padding: 13px 17px;
+      font: 16px Georgia, serif;
+    }
+
+    .actions {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .textlink {
+      font-size: 14px;
+      font-weight: 700;
+      border-bottom: 1px solid var(--gold);
+      padding: 10px 0;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .section {
+      padding: 70px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section h2 {
+      font: clamp(30px, 4vw, 45px) Georgia, serif;
+      margin: 9px 0;
+    }
+
+    .sectionhead {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .sectionhead p {
+      color: var(--muted);
+      max-width: 430px;
+      line-height: 1.6;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .event {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .event .photo {
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .event .body { padding: 20px; }
+
+    .event h3 {
+      font: 24px Georgia, serif;
+      margin: 0 0 8px;
+    }
+
+    .event p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .tag {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      margin-bottom: 10px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .service {
+      padding: 23px 18px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      min-height: 160px;
+      border-radius: 4px;
+    }
+
+    .service .symbol {
+      font-size: 25px;
+      color: var(--gold);
+    }
+
+    .service h3 {
+      font: 20px Georgia, serif;
+      margin: 13px 0 6px;
+    }
+
+    .service p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .pricecard {
+      padding: 25px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 5px;
+    }
+
+    .pricecard h3 {
+      font: 24px Georgia, serif;
+      margin: 5px 0 10px;
+    }
+
+    .price {
+      font: 30px Georgia, serif;
+      color: var(--green);
+      margin: 15px 0;
+    }
+
+    .price small {
+      font: 12px system-ui;
+      color: var(--muted);
+    }
+
+    .pricecard ul {
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .note {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 15px;
+    }
+
+    .area {
+      background: var(--soft);
+      padding: 36px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .area h2 {
+      margin: 0;
+      font: 32px Georgia, serif;
+    }
+
+    .area p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    .contactgrid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 35px;
+    }
+
+    .contactgrid p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .contactgrid a {
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    .form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 13px;
+    }
+
+    .form input,
+    .form select,
+    .form textarea {
+      width: 100%;
+      padding: 13px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      color: var(--ink);
+      font: 14px system-ui;
+    }
+
+    .form textarea {
+      grid-column: 1 / -1;
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .form button { justify-self: start; }
+
+    .wide { grid-column: 1 / -1; }
+
+    .footer {
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    @media (max-width: 760px) {
+      nav { gap: 12px; }
+      nav a:not(.navcta) { display: none; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 30px;
+      }
+
+      .heroimg {
+        min-height: 300px;
+        grid-row: 1;
+      }
+
+      .cards, .pricing { grid-template-columns: 1fr; }
+      .sectionhead, .area { display: block; }
+      .sectionhead p { margin-top: 12px; }
+      .contactgrid { grid-template-columns: 1fr; }
+      .footer { display: block; }
+      .form { grid-template-columns: 1fr; }
+      .form textarea, .wide { grid-column: auto; }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="wrap">
+
+      <header class="nav">
+        <a class="brand" href="#top">Bliss <span>Events</span></a>
+
+        <nav>
+          <a href="#events">Our work</a>
+          <a href="#services">Services</a>
+          <a href="#pricing">Packages</a>
+          <a href="#contact" class="btn navcta">Plan an event</a>
+        </nav>
+      </header>
+
+      <main id="top">
+
+        <!-- HERO -->
+        <section class="hero">
+          <div>
+            <div class="eyebrow">Moments made memorable</div>
+
+            <h1>Your occasion.<br>Our celebration.</h1>
+
+            <p>
+              Beautifully planned birthdays, weddings, naming ceremonies,
+              proposals and more. From décor and catering to accommodation,
+              Bliss Events takes care of the details.
+            </p>
+
+            <div class="actions">
+              <a class="btn" href="#contact">Let's plan together</a>
+              <a class="textlink" href="#events">Explore our work ↓</a>
+            </div>
+
+            <p class="hint">
+              Serving Kumta, Honnavar and nearby coastal communities.
+            </p>
+          </div>
+
+          <div class="heroimg" role="img" aria-label="Elegant celebration setup">
+            <div class="imgtag">Every detail, with care</div>
+          </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section class="section" id="events">
+          <div class="sectionhead">
+            <div>
+              <div class="eyebrow">A few kinds of magic</div>
+              <h2>Celebrations we've created</h2>
+            </div>
+
+            <p>
+              A growing gallery of real events, each one personal.
+              Replace these sample images with your own event photos.
+            </p>
+          </div>
+
+          <div class="cards">
+            <article class="event">
+              <div class="photo"
+                style="background-image:url('https://images.unsplash.com/photo-1530103862676-de8c9de750ed?auto=format&fit=crop&w=900&q=80')">
+              </div>
+              <div class="body">
+                <span class="tag">Birthdays</span>
+                <h3>Another year, beautifully celebrated</h3>
+                <p>
+                  Custom themes, décor, cake coordination and joyful
+                  details for all ages.
+                </p>
+              </div>
+            </article>
+
+            <article class="event">
+              <div class="photo"
+                style="background-image:url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80')">
+              </div>
+              <div class="body">
+                <span class="tag">Weddings</span>
+                <h3>A day to remember</h3>
+                <p>
+                  From intimate ceremonies to full wedding-day
+                  coordination and guest care.
+                </p>
+              </div>
+            </article>
+
+            <article class="event">
+              <div class="photo"
+                style="background-image:url('https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=900&q=80')">
+              </div>
+              <div class="body">
+                <span class="tag">Special moments</span>
+                <h3>Little moments, big feelings</h3>
+                <p>
+                  Baby naming ceremonies, proposals, anniversaries
+                  and family gatherings.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="section" id="services">
+          <div class="eyebrow">End-to-end support</div>
+          <h2>More than just décor</h2>
+
+          <p style="color:var(--muted);max-width:600px;line-height:1.7;margin-bottom:28px">
+            One team to coordinate the moving parts, so you can be
+            present for the moments that matter.
+          </p>
+
+          <div class="services">
+            <article class="service">
+              <div class="symbol">✳</div>
+              <h3>Planning & décor</h3>
+              <p>
+                Theme, venue styling, flowers, lighting and setup.
+              </p>
+            </article>
+
+            <article class="service">
+              <div class="symbol">⌂</div>
+              <h3>Stay & venue</h3>
+              <p>
+                Accommodation coordination and venue arrangements.
+              </p>
+            </article>
+
+            <article class="service">
+              <div class="symbol">♨</div>
+              <h3>Catering</h3>
+              <p>
+                Food planning and coordination for your guests.
+              </p>
+            </article>
+
+            <article class="service">
+              <div class="symbol">♡</div>
+              <h3>Guest experience</h3>
+              <p>
+                Vendor coordination, schedules and on-day support.
+              </p>
+            </article>
+
+            <article class="service">
+              <div class="symbol">📸</div>
+              <h3>Photography & Photoshoots</h3>
+              <p>
+                Event photography, candid moments, pre-wedding shoots
+                and professional photoshoots for your special occasions.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- PRICING -->
+        <section class="section" id="pricing">
+          <div class="sectionhead">
+            <div>
+              <div class="eyebrow">Flexible packages</div>
+              <h2>Starting points, not limits</h2>
+            </div>
+
+            <p>
+              Every event is different. Contact us for a package
+              that suits your event and budget.
+            </p>
+          </div>
+
+          <div class="pricing">
+            <div class="pricecard">
+              <span class="tag">Simple & lovely</span>
+              <h3>Essential</h3>
+              <div class="price">₹3,500+ <small>/ starting price</small></div>
+              <ul>
+                <li>Basic planning consultation</li>
+                <li>Simple themed décor</li>
+                <li>Setup coordination</li>
+              </ul>
+              <a class="textlink" href="#contact">Ask about Essential →</a>
+            </div>
+
+            <div class="pricecard">
+              <span class="tag">A little extra magic</span>
+              <h3>Signature</h3>
+              <div class="price">Custom quote</div>
+              <ul>
+                <li>Theme and décor planning</li>
+                <li>Vendor coordination</li>
+                <li>Event-day assistance</li>
+              </ul>
+              <a class="textlink" href="#contact">Ask about Signature →</a>
+            </div>
+
+            <div class="pricecard">
+              <span class="tag">Tailored from start to finish</span>
+              <h3>Full service</h3>
+              <div class="price">Custom quote</div>
+              <ul>
+                <li>End-to-end event management</li>
+                <li>Stay and catering coordination</li>
+                <li>Custom guest experience</li>
+              </ul>
+              <a class="textlink" href="#contact">Request a custom quote →</a>
+            </div>
+          </div>
+
+          <p class="note">
+            Final pricing depends on date, guest count, venue, travel,
+            décor, catering and accommodation. Confirm inclusions and
+            terms when booking.
+          </p>
+        </section>
+
+        <!-- SERVICE AREA -->
+        <section class="section">
+          <div class="area">
+            <div>
+              <div class="eyebrow">Along the coast</div>
+              <h2>From Kumta to Honnavar</h2>
+              <p>
+                Local knowledge, thoughtful coordination and a
+                celebration that feels like yours.
+              </p>
+            </div>
+
+            <a class="btn" href="#contact">Check your date</a>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section" id="contact">
+          <div class="contactgrid">
+            <div>
+              <div class="eyebrow">Tell us what you're imagining</div>
+              <h2 style="font:42px Georgia,serif;margin:10px 0">
+                Let's make it happen.
+              </h2>
+
+              <p>
+                Share a few details and we'll prepare a conversation
+                around your event.
+              </p>
+
+              <p>
+                <strong>Coverage:</strong>
+                Kumta · Honnavar · Nearby areas
+              </p>
+
+              <p>
+                <strong>Call / WhatsApp:</strong><br>
+                <a href="tel:+919483829516">9483829516</a><br>
+                <a href="tel:+918722092120">8722092120</a>
+              </p>
+
+              <p>
+                <strong>Instagram:</strong><br>
+                <a href="https://www.instagram.com/bliss__events_/"
+                   target="_blank" rel="noopener">
+                  @bliss__events_
+                </a>
+              </p>
+            </div>
+
+            <form class="form" id="inquiry">
+              <input name="name" placeholder="Your name"
+                     aria-label="Your name" required>
+
+              <input name="phone" placeholder="Phone or WhatsApp"
+                     aria-label="Phone or WhatsApp" required>
+
+              <select name="event" aria-label="Event type">
+                <option>Birthday</option>
+                <option>Wedding</option>
+                <option>Naming ceremony</option>
+                <option>Proposal</option>
+                <option>Photography / Photoshoot</option>
+                <option>Catering</option>
+                <option>Other celebration</option>
+              </select>
+
+              <input name="date" placeholder="Preferred date (optional)"
+                     aria-label="Preferred date">
+
+              <input name="location" class="wide"
+                     placeholder="Event location"
+                     aria-label="Event location">
+
+              <textarea name="details"
+                        placeholder="Guest count, ideas, budget or anything else…"
+                        aria-label="Event details"></textarea>
+
+              <button class="btn" type="submit">
+                Send enquiry on WhatsApp
+              </button>
+
+              <div id="status" class="hint wide" aria-live="polite"></div>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>
+          © <span id="year"></span> Bliss Events · Kumta–Honnavar
+        </span>
+        <span>Made for moments worth remembering</span>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    const form = document.getElementById("inquiry");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const data = new FormData(form);
+
+      const message = [
+        "Hello Bliss Events! I would like to enquire about an event.",
+        "Name: " + data.get("name"),
+        "Phone: " + data.get("phone"),
+        "Event: " + data.get("event"),
+        "Date: " + (data.get("date") || "Not decided"),
+        "Location: " + (data.get("location") || "Not decided"),
+        "Details: " + (data.get("details") || "Not provided")
+      ].join("\n");
+
+      const phone = "919483829516";
+      const whatsappURL =
+        "https://wa.me/" + phone +
+        "?text=" + encodeURIComponent(message);
+
+      window.open(whatsappURL, "_blank", "noopener");
+
+      document.getElementById("status").textContent =
+        "Your enquiry is ready in WhatsApp. Review and send it to Bliss Events.";
+    });
+  </script>
+</body>
+</html>
