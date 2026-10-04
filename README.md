@@ -1,0 +1,2 @@
+# bliss-events
+Event organization
